@@ -1,14 +1,15 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    const dialog = document.getElementById('dialog');
+
+    const janela = document.getElementById('janela');
     const evento = document.getElementById('addEvento');
-    // const confirmarEvento = document.getElementById('confirmarEvento');
     const listaEventos = document.getElementById('listaEventos');
     const nome = document.getElementById('campoAddNomeEvento').value;
     const local = document.getElementById('campoAddLocalEvento').value;
     const data = document.getElementById('campoAddDataEvento').value;
 
     evento.addEventListener('click', () => {
-        dialog.showModal();
+        janela.showModal();
     })
 
     const form = document.getElementById('formJanela');
@@ -40,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 novoNome.textContent(nome);
                 novoLocal.textContent(local);
                 novaData.textContent(data);
+
+                
             } else {
                 const data = await res.json();
                 alert(data.message || "Erro ao criar evento");

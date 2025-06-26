@@ -1,4 +1,4 @@
-import { Usuarios } from "../model/usuarioModel"; 
+import { Usuarios } from "../model/usuariosModel"; 
 import { Request, Response } from "express"; 
 import { AppDataSource } from "../database/data-source";
 import bcrypt from "bcryptjs"

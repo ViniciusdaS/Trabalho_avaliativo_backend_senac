@@ -1,15 +1,16 @@
 # 📦 Atividade avaliativa de backend
 
-Este projeto é uma aplicação Node.js com TypeScript que permite o gerenciamento de usuários e eventos, incluindo funcionalidades completas de CRUD. A estrutura segue o padrão MVC (Model-View-Controller), utilizando Express, TypeORM e outras bibliotecas essenciais.
+Este projeto é uma atividade desenvolvida durante meu curso técnico em desenvolvimento de sistemas. A ativividade é avaliativa e ela consiste em desenvolver uma aplicação utilizando principalmente protocolos http e banco de dados mysql para fazer um sistema que cadastre o usuário e faça login dele, armazenando os dados obtidos do cadastro em um banco de dados mysql. A minha aplicação foi um site de cadastro de eventos, onde o usuário pode escolher entre se cadastrar ou fazer login se já cadastrado. Após o cadastro ou login, o usuário é direcionado para a tela principal onde ele pode cadastrar os eventos que ele quiser clicando em adicionar evento.
 
 ## 🛠️ Tecnologias Utilizadas
 
 - [Node.js]
 - [TypeScript]
-- [Express]
+- [Express.js]
 - [TypeORM]
-- [bcrypt]
-- [@types/*]
+- [bcrypt.js]
+- [@types/express*]
+- [mysql2]
 
 
 ## 📁 Estrutura do Projeto
@@ -36,19 +37,16 @@ Este projeto é uma aplicação Node.js com TypeScript que permite o gerenciamen
 
 ✅ Criptografia e hash de senhas com bcrypt
 
-✅ Requisitos: Node.js 
-
-✅ Banco de dados (ex: PostgreSQL ou SQLite)
+✅ Banco de dados (mysql)
 
 
 📌 Observações
 
-Os modelos (model/) estão alinhados com as tabelas do banco de dados.
+- O nome do banco de dados deve ser eventos_db;
+- Devido a necessidade de confidencialidade, os dados do banco são colocados em um arquivo .env que não enviará os dados do banco que são confidenciais, então os dados ficam á sua escolha e necessidade;
+- Mantenha o syncronyze, emitDecoratorMetadata e experimentalDecorator como true para que não ocorra nenhum erro indesejado na aplicação
+- Para que a aplicação funcione, todas as dependências tem que estar instaladas; 
 
-As rotas HTTP utilizam Express.Request e Express.Response com tipagem correta.
-
-As telas são renderizadas utilizando HTML localizado em public/.
-
-✍️ Autor
-**Vinicius**
+✍️ Dev:
+**Vinicius do curso Técnico em desenvolvimento de sistemas do Senac**
 
