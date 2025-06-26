@@ -13,9 +13,9 @@ export class Eventos {
     public local: string;
     
     @Column({ nullable:false })
-    public data: Date;
+    public data: string;
 
-    constructor(nome: string, local: string, data: Date) {
+    constructor(nome: string, local: string, data: string) {
         this.nome = nome;
         this.local = local; 
         this.data = data;

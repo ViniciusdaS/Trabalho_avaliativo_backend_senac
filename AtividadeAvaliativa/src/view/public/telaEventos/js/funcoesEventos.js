@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const janela = document.getElementById('janela');
     const evento = document.getElementById('addEvento');
-    const listaEventos = document.getElementById('listaEventos');
-    const nome = document.getElementById('campoAddNomeEvento').value;
-    const local = document.getElementById('campoAddLocalEvento').value;
-    const data = document.getElementById('campoAddDataEvento').value;
+    const tabelaEventos = document.getElementById('tabelaEventos');
 
     evento.addEventListener('click', () => {
         janela.showModal();
@@ -17,32 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        const nome = document.getElementById('campoAddNomeEvento').value;
+        const local = document.getElementById('campoAddLocalEvento').value;
+        const data = document.getElementById('campoAddDataEvento').value;
+
         try {
             const res = await fetch('http://localhost:3000/api/eventos', {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({ nome, local, data })
+                body: JSON.stringify({ nome: nome, local: local, data: data })
             });
 
             if (res.ok) {
                 alert('evento criado com sucesso');
-                const novaLista = document.createElement('tr')
-                const novoNome = document.createElement('td')
-                const novoLocal = document.createElement('td')
-                const novaData = document.createElement('td')
-
-                listaEventos.appendChild(novaLista);
-                novaLista.appendChild(novoNome);
-                novaLista.appendChild(novoLocal);
-                novaLista.appendChild(novaData);
-
-                novoNome.textContent(nome);
-                novoLocal.textContent(local);
-                novaData.textContent(data);
-
                 
+
             } else {
                 const data = await res.json();
                 alert(data.message || "Erro ao criar evento");
@@ -51,5 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Impossível criar evento')
             console.error('Erro bisnho detectado!: ', error);
         }
+
+
     });
 })

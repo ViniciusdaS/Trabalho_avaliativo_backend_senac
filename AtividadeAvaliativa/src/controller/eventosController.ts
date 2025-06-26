@@ -8,10 +8,8 @@ export class EventosController {
     async criarEvento(req: Request, res: Response) {
         const { nome, local, data } = req.body;
 
-        console.log(`data AQUI: ${data}`)
-
         if (!nome || !local || !data) {
-            res.status(400).json({ "message": "Preencha os campos!" });
+            res.status(400).json({ mensagem: "Preencha os campos!" });
         }
 
         const evento = new Eventos(nome, local, data);
@@ -26,12 +24,12 @@ export class EventosController {
     }
 
     async listarEvento(req: Request, res: Response) {
-        const { nome, email, senha } = req.body;
+        const { nome, local, data } = req.body;
 
-        const dados = nome && email && senha;
+        const dados = nome && local && data;
 
-        if (!nome || !email || !senha) {
-            res.status(201).json(dados)
+        if (!nome || !local || !data) {
+            res.status(201).json({dados})
         }
     }
 

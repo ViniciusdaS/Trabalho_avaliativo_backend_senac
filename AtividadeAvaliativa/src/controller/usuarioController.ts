@@ -1,4 +1,4 @@
-import { Usuarios } from "../model/usuariosModel"; 
+import { Usuarios } from "../model/usuarioModel"; 
 import { Request, Response } from "express"; 
 import { AppDataSource } from "../database/data-source";
 import bcrypt from "bcryptjs"
@@ -88,7 +88,7 @@ export class UserController {
         const emailExistente = await userRepository.findOneBy({ email })
 
         if (!emailExistente) {
-            res.status(404).json({ mensagem: "Usuário inexistente" })
+            res.status(409).json({ mensagem: "Usuário inexistente" })
             return;
         }
 
