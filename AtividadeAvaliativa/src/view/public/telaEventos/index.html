@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="icon" href="./imgs/iconeSite.png">
+    <link rel="stylesheet" href="./style/styleTelaEventos.css">
+</head>
+<body>
+    <div id="containerTabela">
+        <table id="tabelaEventos">
+            <tr>
+                <th>Eventos</th>
+                <th>Local</th>
+                <th>Data</th>
+            </tr>
+        </table>
+
+        <button id="addEvento">Adicionar evento</button>
+    </div>
+
+    <dialog id="dialog">
+        <form id="formJanela">
+            <h1>Adicionar evento 📆</h1>
+            <br><br>
+            <label>Nome do evento</label>
+            <br>
+            <input id="campoAddNomeEvento">
+            <br><br>
+            <label>Local do evento</label>
+            <br>
+            <input id="campoAddLocalEvento">
+            <br><br>
+            <label>Data do evento</label>
+            <br>
+            <input id="campoAddDataEvento">
+            <br><br>
+
+            <input id="confirmarEvento" type="submit" value="Confirmar">
+        </form>
+        
+    </dialog>
+
+    <script src="./js/funcoesEventos.js"></script>
+</body>
+</html>
